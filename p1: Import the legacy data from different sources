@@ -1,0 +1,17 @@
+Importing Excel Data
+1) Launch Power BI Desktop.
+2) From the Home ribbon, select Get Data. Excel is one of the Most Common data
+connections, so you can select it directly from the Get Data menu.
+3) If you select the Get Data button directly, you can also select FIle > Excel and select
+Connect.
+4) In the Open File dialog box, select the Products.xlsx file.
+5) In the Navigator pane, select the Products table and then select Edit.
+
+1) From the Home ribbon tab in Query Editor, select Get Data.
+2) Browse to the OData Feed data source.
+3) In the OData Feed dialog box, paste the URL for the Northwind OData feed.
+4) Select OK.
+
+5) In the Navigator pane, select the Orders table, and then select Edit.
+
+Note - You can click a table name, without selecting the checkbox, to see a preview.
