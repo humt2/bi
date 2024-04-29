@@ -1,0 +1,20 @@
+Step 1: Create charts showing Units in Stock by Product and Total Sales by Year
+
+1. Drag UnitsInStock from the Field pane (the Fields pane is along the right of the
+screen) onto a blank space on the canvas. A Table visualization is created. Next, drag
+ProductName to the Axis box, found in the bottom half of the Visualizations pane.
+Then we then select Sort By > UnitsInStock using the skittles in the top right corer of
+the visualization.
+2. Drag OrderDate to the canvas beneath the first chart, then drag LineTotal (again, from
+the Fields pane) onto the visual, then select Line Chart. The following visualization is
+created.
+3. Next, drag ShipCountry to a space on the canvas in the top right. Because you selected
+a geographic field, a map was created automatically. Now drag LineTotal to the Values
+field; the circles on the map for each country are now relative in size to the LineTotal
+for orders shipped to that country.
+Step 2: Interact with your report visuals to analyze further
+Power BI Desktop lets you interact with visuals that cross-highlight and filter each other to
+uncover further trends.
+1. Click on the light blue circle centered in Canada. Note how the other visuals are
+filtered to show Stock (ShipCountry) and Total Orders (LineTotal) just for Canada.
+
