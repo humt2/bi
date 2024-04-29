@@ -1,0 +1,114 @@
+Creating Data Warehouse
+Let us execute our T-SQL Script to create data warehouse with fact tables, dimensions and
+populate them with appropriate test values.
+Download T-SQL script attached with this article for creation of Sales Data Warehouse or
+download from this article “Create First Data Warehouse” and run it in your SQL Server.
+Follow the given steps to run the query in SSMS (SQL Server Management Studio).
+1. Open SQL Server Management Studio 2008
+2. Connect Database Engine
+3. Open New Query editor
+4. Copy paste Scripts given below in various steps in new query editor window one by
+one
+5. To run the given SQL Script, press F5
+6. It will create and populate “Sales_DW” database on your SQL Server
+Developing an OLAP Cube
+For creation of OLAP Cube in Microsoft BIDS Environment, follow the 10 easy steps given
+below.
+Step 1: Start BIDS Environment
+Click on Start Menu -> Microsoft SQL Server 2008 R2 -> Click SQL Server Business
+Intelligence Development Studio.
+Step 2: Start Analysis Services Project
+Click File -> New -> Project ->Business Intelligence Projects ->select Analysis Services
+Project-> Assign Project Name -> Click OK
+Step 3: Creating New Data Source
+3.1 In Solution Explorer, Right click on Data Source -> Click New Data Source
+Step 3: Creating New Data Source
+3.1 In Solution Explorer, Right click on Data Source -> Click New Data Source
+3.2 Click on Next
+3.3 Click on New Button
+3.4 Creating New connection
+1. Specify Your SQL Server Name where your Data Warehouse was created
+2. Select Radio Button according to your SQL Server Authentication mode
+3. Specify your Credentials using which you can connect to your SQL Server
+4. Select database Sales_DW.
+5. Click on Test Connection and verify for its success
+6. Click OK.
+3.5 Select Connection created in Data Connections-> Click Next
+3.6 Select Option Inherit
+
+3.7 Assign Data Source Name -> Click Finish
+Step 4: Creating New Data Source View
+4.1 In the Solution Explorer, Right Click on Data Source View -> Click on New Data
+Source View
+
+4.2 Click Next
+4.3 Select Relational Data Source we have created previously (Sales_DW)-> Click Next
+4.4 First move your Fact Table to the right side to include in object list.
+
+Select FactProductSales Table -> Click on Arrow Button to move the selected object to Right
+Pane.
+4.5 Now to add dimensions which are related to your Fact Table, follow the given steps:
+Select Fact Table in Right Pane (Fact product Sales) -> Click On Add Related Tables
+4.6 It will add all associated dimensions to your Fact table as per relationship specified in
+your SQL DW (Sales_DW).
+Click Next.
+4.7 Assign Name (SalesDW DSV)-> Click Finish
+
+Select FactProductSales Table -> Click on Arrow Button to move the selected object to Right
+Pane.
+4.5 Now to add dimensions which are related to your Fact Table, follow the given steps:
+Select Fact Table in Right Pane (Fact product Sales) -> Click On Add Related Tables
+4.6 It will add all associated dimensions to your Fact table as per relationship specified in
+your SQL DW (Sales_DW).
+Click Next.
+4.7 Assign Name (SalesDW DSV)-> Click Finish
+
+5.2 Click Next
+5.3 Select Option Use existing Tables -> Click Next
+5.4 Select Fact Table Name from Measure Group Tables (FactProductSales) -> Click next
+5.5 Choose Measures from the List which you want to place in your Cube --> Click Next
+5.6 Select All Dimensions here which are associated with your Fact Table-> Click Next
+5.7 Assign Cube Name (SalesAnalyticalCube) -> Click Finish
+5.8 Now your Cube is ready, you can see the newly created cube and dimensions added in
+your solution explorer.
+
+Step 6: Dimension Modification
+In Solution Explorer, double click on dimension Dim Product -> Drag and Drop Product
+Name from Table in Data Source View and Add in Attribute Pane at left side.
+Step 7: Creating Attribute Hierarchy In Date Dimension
+Double click On Dim Date dimension -> Drag and Drop Fields from Table shown in Data
+Source View to Attributes-> Drag and Drop attributes from leftmost pane of attributes to
+middle pane of Hierarchy.
+Drag fields in sequence from Attributes to Hierarchy window (Year, Quarter Name, Month
+Name, Week of the Month, Full Date UK),
+
+
+Step 8: Deploy the Cube
+8.1 In Solution Explorer, right click on Project Name (SalesDataAnalysis) -- > Click
+Properties
+8.2 Set Deployment Properties First
+
+In Configuration Properties, Select Deployment-> Assign Your SQL Server Instance Name
+Where Analysis Services Is Installed (mubin-pc\fairy) (Machine Name\Instance Name) ->
+Choose Deployment Mode Deploy All as of now ->Select Processing Option Do Not
+Process -> Click OK
+8.3 In Solution Explorer, right click on Project Name (SalesDataAnalysis) -- > Click Deploy
+
+8.4 Once Deployment will finish, you can see the message Deployment Completed in
+deployment Properties.
+
+Step 9: Process the Cube
+9.1 In Solution Explorer, right click on Project Name (SalesDataAnalysis) -- > Click Process
+9.2 Click on Run button to process the Cube
+9.3 Once processing is complete, you can see Status as Process Succeeded -->Click Close to
+close both the open windows for processing one after the other.
+Step 10: Browse the Cube for Analysis
+10.1 In Solution Explorer, right click on Cube Name (SalesDataAnalysisCube) -- > Click
+Browse
+10.2 Drag and drop measures in to Detail fields, & Drag and Drop Dimension Attributes in
+Row Field or Column fields.
+Now to Browse Our Cube
+1. Product Name Drag & Drop into Column
+2. Full Date UK Drag & Drop into Row Field
+3. FactProductSalesCount Drop this measure in Detail area
+
